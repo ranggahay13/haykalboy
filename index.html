@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Chairunnisa! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@300;400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #ffb7d5 0%, #ff85a2 50%, #ff5c8d 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Login Screen */
+        .login-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53, #ff6b8b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: transform 1s ease-in-out;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #ff6b8b;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.8rem 0;
+            border: 3px solid #ffb7d5;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: #ff6b8b;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+        }
+
+        .login-btn {
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .main-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            color: #ff6b8b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff6b8b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Letter Section */
+        .letter-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .hearts {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2rem;
+        }
+
+        /* Calendar Section */
+        .calendar {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 0 auto;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-title {
+            text-align: center;
+            color: #ff6b8b;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-date {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6b8b;
+            margin: 1rem 0;
+        }
+
+        .countdown {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Photos Section */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+       /* Cake */
+.cake-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.cake {
+  position: relative;
+  width: 160px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatCake 3s ease-in-out infinite;
+}
+
+.cake-layer {
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: -10px;
+  box-shadow: inset 0 -5px 0 rgba(0,0,0,0.1);
+}
+
+.layer1 {
+  background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+}
+
+.layer2 {
+  background: linear-gradient(to bottom, #ffe4e1, #ffb6c1);
+  width: 120px;
+}
+
+.layer3 {
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  width: 100px;
+}
+
+.candle {
+  width: 15px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 5px,
+    #ff4500 5px,
+    #ff4500 10px
+  );
+  position: absolute;
+  top: -40px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.flame {
+  width: 15px;
+  height: 25px;
+  background: radial-gradient(circle, #ffd700, #ff8c00);
+  border-radius: 50% 50% 50% 50%;
+  position: absolute;
+  top: -25px;
+  animation: flicker 0.15s infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes flicker {
+  from { transform: scale(1) rotate(-3deg); opacity: 0.9; }
+  to { transform: scale(1.1) rotate(3deg); opacity: 1; }
+}
+
+@keyframes floatCake {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cake-text {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff4081;
+}
+
+        /* Game Section */
+        .game-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .memory-card {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s ease;
+        
+        }
+
+        .memory-card:hover {
+            transform: scale(1.1);
+        }
+
+        /* Questions Section */
+        .questions-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .question {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ffb7d5;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b8b, #ff8e53);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+        }
+
+        /* Floating Animations */
+        .floating {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatAround 15s linear infinite;
+        }
+
+        .doll { color: #ff6b8b; font-size: 2rem; }
+        .flower { color: #4caf50; font-size: 2rem; }
+        .heart { color: #ff4444; font-size: 2rem; }
+        .chocolate { color: #8b4513; font-size: 2rem; }
+        .gift { color: #ff8e53; font-size: 2rem; }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(0.95); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(90deg); }
+            50% { transform: translate(200px, 0) rotate(180deg); }
+            75% { transform: translate(100px, 50px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        /* Memory Photo Fallback Styles */
+        .photo-item {
+            background: linear-gradient(135deg, #ffb7d5, #ff85a2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .nav-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .memory-game { grid-template-columns: repeat(3, 1fr); }
+            .memory-card { width: 60px; height: 60px; font-size: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .login-box { padding: 1.5rem; }
+            .main-title { font-size: 2rem; }
+            .section { padding: 1.5rem; }
+            .photos-grid { grid-template-columns: 1fr; }
+            .memory-game { grid-template-columns: repeat(2, 1fr); }
+        }
+        /* Umum */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #ff9a9e, #fecfef);
+  color: #333;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Semua tombol sama style */
+.nav-btn {
+  background: linear-gradient(45deg, #ff9a9e, #fecfef);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(45deg, #fecfef, #ff9a9e);
+}
+
+/* Section */
+.section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    </style>
+   
+
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-box">
+            <h1 class="login-title">🎂 Selamat Datang nisa!</h1>
+            <input type="text" class="login-input" id="nameInput" placeholder="Nama Lengkap kamu" required>
+            <input type="number" class="login-input" id="ageInput" placeholder="Umur kamu sekarang" required>
+            <input type="password" class="login-input" id="passwordInput" placeholder="Password nya" required>
+            <button class="login-btn" onclick="checkLogin()">Masuk</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent" style="display: none;">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">BOOM!! HAPPY SEVENTEEN BIRTHDAY! 🎉</h1>
+            <p class="subtitle">Selamat merayakan 17 tahun kehidupan yang penuh kebahagiaan inii nisaaaa! 💖</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+             <button class="nav-btn" onclick="showSection('music')">🎵 Music</button>
+            <button class="nav-btn" onclick="showSection('letter')">💌 Surat Cinta</button>
+            <button class="nav-btn" onclick="showSection('calendar')">📅 Kalender Spesial</button>
+            <button class="nav-btn" onclick="showSection('photos')">📸 Kenangan Indah</button>
+            <button class="nav-btn" onclick="showSection('cake')">🎂 Kue Ulang Tahun</button>
+            <button class="nav-btn" onclick="showSection('games')">🎮 Games</button>
+            <button class="nav-btn" onclick="showSection('questions')">❓ Quiz Romantis</button>
+        </div>
+
+        <div class="music-container">
+
+          <!-- 🎵 Musik Section -->
+<div class="music-section">
+  <h2 class="music-title">🎵 Lagu Spesial Untukmu</h2>
+  <div class="music-player">
+    <div class="music-info">
+      <div class="music-icon">🎶</div>
+      <div class="music-name">Hari Spesialmu dengan lagu ini</div>
+    </div>
+    <audio controls>
+      <source src="laguu birthday1.mp3" type="audio/mpeg">
+      Browsermu tidak mendukung audio.
+    </audio>
+    <p class="music-caption">Semoga lagu ini menemani hari spesialmu 💖</p>
+  </div>
+</div>
+
+<style>
+.music-section {
+  text-align: center;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.music-title {
+  font-size: 1.6rem;
+  color: #ff4d6d;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.music-player {
+  display: inline-block;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  max-width: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.music-player:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.music-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.music-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+audio {
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+}
+
+.music-caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+</style>
+
+  
+<!-- Letter Section -->
+        <div class="section active" id="letter">
+            <h2 class="section-title">Untuk Chairunisa Tercinta</h2>
+            <div class="letter-content">
+                <p>Hai nisaaaaaaa!</p>
+                <p>Selamat ulang tahun yang ke-17 kamu yyaawww! 🎂💖</p>
+                <p>Di hari spesialmu ini, aku ingin mengucapkan betapa beruntungnya aku memiliki seseorang yang terbaik seperti kamu dalam kisahku. setiap waktu yang berjalan adalah sebuah kebahagiaan yang aku pernah terima. jangan pernah menyerah ya> kalo suatu waktu dunia jahat sama nisaa, AKU! RANGGA ERMANSYAH!!! siap menjadi rumah tempat kamu bercerita dan berehat, okay? so kedepannya kamu harus lebih semangatt dan lebih mengarah ke pribadi yang lebuh dewasa yw! CIEEEEEEEEE UDAH BISAAA BUAT KTP KAKA SATU INICHHHHHHHHH</p>
+                <p>Kamu adalah perempuan yang kuat, cantik, dan penuh ceritaa!. Senyummu bisa menerangi hari terkelam sekalipun, dan tawamu adalah musik terindah yang pernah kudengar.</p>
+                <p>Di usia 17 tahun kamu ini, semoga semua impian dan harapanmu terkabul yaa!!. Teruslah menjadi pribadi yang baik, mandiri, dan penuh semangat. Aku akan selalu ada untuk mendukungmu dalam setiap langkah kehidupan.Nisaaa! nisaa harus bisaaa berbagi dan share kesulitan apapun juga ke rangga ya? walaupun itu tidak terlalu penting ceritanya, Tetapi secara tidak langsung itu menghilangkan rasa kesendirian dan kesepian nisaaa hehehe.</p>
+                <p>Terima kasih sudah menjadi bagian dari hidupku. Suatuu saat kita akan bisa ketemu nisaaa! kamu bersabar aja yaaaa, pokonyaa jangan pernah bosan dengan "COWO GREENFLAG MANIS BAIK PERHATIAN HUMORIS KRINJ ANEH GARING" ini yakk. SUatu saat itu tibaaa, aku ada yang mau aku ucapkan dengan kamu, <h3>aku tidak pernah menarik kata kata ku.</h3>WOAAHHH Aku bahagia bgt lebih dari kata-kata yang bisa kuungkapkan. I love you now, I want to go through this approach with you!, Chairunisaaa</p>
+                <p>happy seventeen birthday, perfect woman! Semoga hari ini penuh dengan kebahagiaan, tawa, dan cinta.</p>
+                <p>Dengan cinta,<br>Rangga Ermansyah 💖</p>
+            </div>
+            <div class="hearts">💖 💕 💞 💓 💗 💘 💝</div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="section" id="calendar">
+            <h2 class="section-title">Kalender Spesial</h2>
+            <div class="calendar">
+                <h3 class="calendar-title">Tanggal Ulang Tahun kamu!!</h3>
+                <div class="calendar-date">26 AGUSTUS 2025</div>
+                <p>Congratulations! Today is your special day.! 🎉</p>
+                <div class="countdown">
+                    <p>⏰ Waktu perayaan dimulai!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photos Section -->
+        <div class="section" id="photos">
+            <h2 class="section-title">Album Kamuuuuu</h2>
+            <div class="photos-grid">
+                <div class="photo-item">
+                    <img src="nisakecil.jpg" alt="Foto pertama kami bersama di taman bunga dengan senyum bahagia" onerror="this.style.display='none'">
+                    <div class="photo-caption">ini nisa kecil guys! aku gatau dia umur berapa kemarin 💖</div>
+                </div>
+                <div class="photo-item">
+                    <img src="nisaacute.jpg" alt="Foto kita berdua menikmati sunset di pantai dengan latar orange" onerror="this.style.display='none'">
+                    <div class="photo-caption">Sebanyaknya foto, ini always lucuu cuiii 🌅</div>
+                </div>
+                <div class="photo-item">
+                    <img src="nisayali.jpg" alt="Kita tertawa bersama di kafe favorit dengan latar interior cozy" onerror="this.style.display='none'">
+                    <div class="photo-caption">Nah sebanyaknya foto, ini adalah skins yali yalinya, CANTIK BUKAN?? 😊</div>
+                </div>
+                <div class="photo-item">
+                    <img src="Nisakondangan.jpg" alt="Foto close-up kita berdua dengan background kota malam yang berkilau" onerror="this.style.display='none'">
+                    <div class="photo-caption">GATAU KENAPA, yang inii auranya kaya CEWE MAHAL cuiii, kaya ibu ibu mau kondangan tapi versi muda nya, pls ini cantik bgtee dan elegann HAHAHA🌙</div>
+                     <div class="photo-item">
+                    <img src="nisabelanja.jpg" alt="Foto kita berdua menikmati sunset di pantai dengan latar orange" onerror="this.style.display='none'">
+                    <div class="photo-caption">aku gatau dia lagi mau belanja apa, Tetapi ini keren bgtee tau fotonya, foto lagi ntah apa belanjanyaa, TAPI ALWAYS LUCUUUUU 🌅</div>
+                    
+                </div>
+            </div>
+        </div>
+
+</script>
+</body>
+</html>
+<!-- 🎂 Cake Section Lucu & Fancy -->
+<div class="cake-container">
+  <h2 class="section-title">Kue Ulang Tahun Spesial dari aku! 🎉🍰</h2>
+  <div class="cake">
+    <!-- Lapisan Kue Bulat -->
+    <div class="cake-layer layer1"></div>
+    <div class="cake-layer layer2"></div>
+    <div class="cake-layer layer3"></div>
+
+    <!-- Krim Drip -->
+    <div class="frosting"></div>
+
+    <!-- Sprinkle Lucu -->
+    <div class="sprinkle sprinkle1"></div>
+    <div class="sprinkle sprinkle2"></div>
+    <div class="sprinkle sprinkle3"></div>
+    <div class="sprinkle sprinkle4"></div>
+    <div class="sprinkle sprinkle5"></div>
+
+    <!-- Lilin -->
+    <div class="candle">
+      <div class="flame" id="flame"></div>
+      <div class="smoke" id="smoke1"></div>
+      <div class="smoke" id="smoke2"></div>
+      <div class="smoke" id="smoke3"></div>
+    </div>
+  </div>
+  <p>Tiup lilinnya dan buat permohonan! 🕯️💫</p>
+  <button class="nav-btn" onclick="blowCandle()">Tiup Lilin!</button>
+</div>
+
+<style>
+/* Container */
+.cake-container {
+  text-align: center;
+  margin: 50px auto;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+/* Cake Body */
+.cake {
+  position: relative;
+  width: 180px;
+  margin: 20px auto;
+}
+
+/* Lapisan Kue Bulat */
+.cake-layer {
+  width: 100%;
+  border-radius: 50% 50% 30% 30%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.layer1 {
+  height: 50px;
+  background: linear-gradient(to top, #ff9a9e, #fad0c4);
+}
+.layer2 {
+  height: 40px;
+  width: 140px;
+  background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+  margin-top: -10px;
+}
+.layer3 {
+  height: 30px;
+  width: 110px;
+  background: linear-gradient(to top, #fbc2eb, #a6c1ee);
+  margin-top: -10px;
+}
+
+/* Krim Drip */
+.frosting {
+  width: 110px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50% 50% 0 0;
+  margin: -12px auto 0 auto;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.frosting::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: radial-gradient(circle, #fff 50%, transparent 50%);
+  border-radius: 50%;
+}
+
+/* Sprinkle Lucu */
+.sprinkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.sprinkle1 { background: #ff4d6d; top: -5px; left: 20%; }
+.sprinkle2 { background: #ffde59; top: 0px; left: 50%; }
+.sprinkle3 { background: #6bf178; top: -3px; left: 70%; }
+.sprinkle4 { background: #4d79ff; top: 5px; left: 35%; }
+.sprinkle5 { background: #ff7f50; top: 3px; left: 60%; }
+
+/* Lilin */
+.candle {
+  width: 12px;
+  height: 60px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fdd835,
+    #fdd835 6px,
+    #f57f17 6px,
+    #f57f17 12px
+  );
+  border-radius: 5px;
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Api Lilin */
+.flame {
+  width: 18px;
+  height: 25px;
+  background: radial-gradient(circle, yellow 40%, orange 70%, transparent 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.2s infinite alternate;
+  transition: opacity 0.3s ease;
+}
+.flame.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Efek Asap */
+.smoke {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(200,200,200,0.6);
+  border-radius: 50%;
+  opacity: 0;
+}
+.smoke.active {
+  animation: smokeUp 1.8s forwards;
+}
+@keyframes smokeUp {
+  0%   { opacity: 0.8; transform: translateX(-50%) translateY(0) scale(1); }
+  50%  { opacity: 0.5; transform: translateX(-60%) translateY(-15px) scale(1.2); }
+  100% { opacity: 0; transform: translateX(-40%) translateY(-40px) scale(1.5); }
+}
+
+/* Api Berkedip */
+@keyframes flicker {
+  from { transform: translateX(-50%) scale(1); opacity: 0.9; }
+  to   { transform: translateX(-50%) scale(1.1); opacity: 1; }
+}
+
+/* Tombol */
+.nav-btn {
+  padding: 12px 25px;
+  margin-top: 15px;
+  background: #ff4d6d;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.nav-btn:hover {
+  background: #ff6f91;
+}
+</style>
+
+<script>
+function blowCandle() {
+  const flame = document.getElementById("flame");
+  const smokes = [document.getElementById("smoke1"),
+                  document.getElementById("smoke2"),
+                  document.getElementById("smoke3")];
+
+  // Matikan api langsung
+  flame.classList.add("hidden");
+
+  // Munculkan asap secara bergantian
+  smokes.forEach((s, i) => {
+    setTimeout(() => {
+      s.classList.add("active");
+      setTimeout(() => s.classList.remove("active"), 1800);
+    }, i * 200);
+  });
+
+  setTimeout(() => {
+    alert("Lilin padam 🎉 Semoga harapanmu terkabul!");
+  }, 500);
+}
+</script>
+
+</body>
+</html>
+
+  <!-- script -->
+  <script src="cakes.js"></script>
+</body>
+</html>
+
+
+      <!-- Game Section -->
+<div class="section" id="games" style="display: none;">
+  <h2 class="section-title">Game Memory Spesial</h2>
+  <div class="game-container">
+    <p>Temukan pasangan yang cocok! Ada hadiah spesial menantimu! 🎁</p>
+    <div class="memory-game" id="memoryGame">
+      <!-- Kartu game dibuat oleh JavaScript -->
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- Questions Section -->
+        <div class="section" id="questions">
+            <h2 class="section-title">Quiz Romantis ❤️</h2>
+            <div class="questions-container">
+                <div class="question">
+                    <p class="question-text">1. Kapan pertama kali kita kenalan?</p>
+                    <input type="text" class="answer-input" placeholder="Jawabanmu...">
+                    <button class="submit-btn" onclick="checkAnswer(1)">Cek Jawaban</button>
+                </div>
+                
+                <div class="question">
+                    <p class="question-text">2. Apa makanan favorit kita berdua?</p>
+                    <input type="text" class="answer-input" placeholder="Jawabanmu...">
+                    <button class="submit-btn" onclick="checkAnswer(2)">Cek Jawaban</button>
+                </div>
+                
+                <div class="question">
+                    <p class="question-text">3. berikan 1 kata kata buar Rangga! BEBAS</p>
+                    <input type="text" class="answer-input" placeholder="Jawabanmu...">
+                    <button class="submit-btn" onclick="checkAnswer(3)">Cek Jawaban</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login Function
+        function checkLogin() {
+            const name = document.getElementById('nameInput').value.trim();
+            const age = document.getElementById('ageInput').value;
+            const password = document.getElementById('passwordInput').value;
+
+            if (name.toUpperCase() === 'CHAIRUNISAA' && age === '17' && password === 'RANGGA ERMANSYAH') {
+                document.getElementById('loginContainer').style.transform = 'translateY(-100vh)';
+                document.getElementById('mainContent').style.display = 'block';
+                createFloatingAnimations();
+                initMemoryGame();
+            } else {
+                alert('Data yang dimasukkan salah! Silakan coba lagi.');
+            }
+        }
+
+        // Section Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Floating Animations
+        function createFloatingAnimations() {
+            const symbols = ['🎀', '💐', '💖', '🍫', '🎁'];
+            const classes = ['doll', 'flower', 'heart', 'chocolate', 'gift'];
+            
+            for (let i = 0; i < 20; i++) {
+                const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+                const className = classes[Math.floor(Math.random() * classes.length)];
+                
+                const element = document.createElement('div');
+                element.className = `floating ${className}`;
+                element.innerHTML = symbol;
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.top = Math.random() * 100 + 'vh';
+                element.style.animationDuration = (10 + Math.random() * 20) + 's';
+                element.style.animationDelay = Math.random() * 5 + 's';
+                
+                document.body.appendChild(element);
+            }
+        }
+
+        // Navigasi antar section
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => section.style.display = 'none');
+  document.getElementById(sectionId).style.display = 'block';
+
+  // kalau buka games, jalankan game
+  if (sectionId === 'games') {
+    initMemoryGame();
+  }
+}
+
+// --------------------
+// Memory Game
+// --------------------
+function initMemoryGame() {
+  const symbols = ['🎂', '🎁', '💖', '🎀', '🌸', '🍫'];
+  const gameContainer = document.getElementById('memoryGame');
+  let cards = [...symbols, ...symbols];
+
+  // Shuffle
+  cards.sort(() => Math.random() - 0.5);
+
+  gameContainer.innerHTML = '';
+  cards.forEach((symbol, index) => {
+    const card = document.createElement('div');
+    card.className = 'memory-card';
+    card.dataset.symbol = symbol;
+    card.dataset.index = index;
+    card.innerHTML = '?';
+    card.addEventListener('click', flipCard);
+    gameContainer.appendChild(card);
+  });
+}
+
+let flippedCards = [];
+function flipCard() {
+  if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
+    this.classList.add('flipped');
+    this.innerHTML = this.dataset.symbol;
+    flippedCards.push(this);
+
+    if (flippedCards.length === 2) {
+      setTimeout(checkMatch, 500);
+    }
+  }
+}
+
+function checkMatch() {
+  const [card1, card2] = flippedCards;
+
+  if (card1.dataset.symbol === card2.dataset.symbol) {
+    card1.style.visibility = 'hidden';
+    card2.style.visibility = 'hidden';
+
+    // cek kalau semua kartu hilang
+    if (document.querySelectorAll('.memory-card:not([style*="visibility: hidden"])').length === 0) {
+      setTimeout(() => {
+        alert('🎊 Selamat! Kamu menang! Hadiah spesial menantimu nantii! 💝');
+        initMemoryGame();
+      }, 500);
+    }
+  } else {
+    card1.classList.remove('flipped');
+    card2.classList.remove('flipped');
+    card1.innerHTML = '?';
+    card2.innerHTML = '?';
+  }
+
+  flippedCards = [];
+}
+
+        // Quiz Function
+        function checkAnswer(questionNum) {
+            const answers = [
+                'dimulai aku dan kamu saling dm di ig',
+                'Mie ayam dan Dimsum mentai',
+                'MAKASIH BANYAK KATA KATA NYA NISAAAA-!!!'
+            ];
+            
+            alert('Jawaban yang benar: ' + answers[questionNum - 1] + '\n\n ilove uu too nisa, xixixi  💖');
+        }
+
+        // Enter key for login
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkLogin();
+            }
+        });
+    </script>
+</body>
+</html>
+
